@@ -1,9 +1,10 @@
 # WeatherApp
 
 <br>
-[Live demo](https://internship-weather-app-1.vercel.app)
 
-<br><br>
+Live demo - [https://internship-weather-app-1.vercel.app](https://internship-weather-app-1.vercel.app)
+
+<br>
 
 ## Install
 
