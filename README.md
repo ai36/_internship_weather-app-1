@@ -7,11 +7,23 @@ Live demo
 
 ## Install
 
-Not required
+```sh
+npm install
+```
+or
+```sh
+npm i
+```
 
-## Start
+## Run in dev mode
 
-Open index.html in a browser or with Live Server
+```sh
+vite
+```
+or
+```
+npm run dev
+```
 
 ## Sprint 1
 
