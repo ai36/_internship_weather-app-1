@@ -1,0 +1,36 @@
+.chevron {
+    background: var(--color-white-alpha);
+    border: none;
+    border-radius: var(--size-s);
+    padding: var(--size-sm) var(--size-m);
+}
+
+@media screen and (width < 768px) {
+    .chevron {
+        padding: var(--size-s) var(--size-sm);
+    }
+}
+
+.chevron:not(:disabled):hover {
+    background: var(--color-lightgrey);
+}
+
+.chevron:disabled {
+    opacity: .5;
+}
+
+.chevron:has(.chevron__icon--right) {
+    order: 1;
+}
+
+.chevron__icon--right {
+    rotate: 180deg;
+}
+
+@media screen and (width < 768px) {
+    .chevron__icon--left,
+    .chevron__icon--right {
+        width: 16px;
+        aspect-ratio: 1;
+    }
+}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script type="module" src="js/app.js"></script>
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="content">
+        <h1 class="visually-hidden">Weather App - узнай прогноз погоды в любом городе мира, без регистрации и смс</h1>
+        <header class="header">
+            <a class="header-link" href="#">
+                <picture>
+                    <source srcset="img/logo--mobile.svg" media="(max-width: 767px)">
+                    <source srcset="img/logo--tablet.svg" media="(max-width: 1023px)">
+                    <img class="header__logo" width="192" height="48" src="img/logo.svg" alt="Логотип Weather App">
+                </picture>
+            </a>
+            <form class="header-search">
+                <input class="header-search__input" type="search" maxlength="40" placeholder="Поиск по городу">
+                <button class="header-search-button" type="button" tabindex="-1">
+                    <img class="header-search-button__icon header-search-button__icon--search" src="img/icons24/search.svg" alt="Поиск">
+                </button>
+                <button class="header-search-button" type="reset">
+                    <img class="header-search-button__icon header-search-button__icon--close" src="img/icons24/close.svg" alt="Очистить">
+                </button>
+            </form>
+        </header>
+
+        <main class="main">
+            <div class="today">
+                <div class="today-info">
+                    <div class="today-info-location">
+                        <div class="today-info-location__city">Кременчуг-константиновское</div>
+                        <time class="today-info-location__day" datetime="2025-01-06">------, -- -----</time>
+                        <time class="today-info-location__time" datetime="00:00">00:00</time>
+                    </div>
+                    <div class="today-info__temp">-7°</div>
+                    <div class="today-info-other">
+                        <div class="today-info-other-weather">
+                            <img class="today-info-other-weather__icon" src="img/icons100/day/broken-clouds.svg" alt="Иконка - переменная облачность">
+                            <span class="today-info-other-weather__text">Облачно</span>
+                        </div>
+                        <div class="today-info-other__fill-temp">Ощущается как -11°</div>
+                    </div>
+                </div>
+                <ul class="today-details">
+                    <li class="today-details-item">
+                        <div class="value-box">
+                            <h3 class="value-box__title">Влажность</h3>
+                            <img class="value-box__icon" src="img/icons32/humidity.svg" alt="Влажность">
+                            <span class="value-box__value">-- %</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-range-wrapper">
+                                <input class="progress-bar__range progress-bar__range--progress" type="range" value="0" min="0" max="100" step="1">
+                            </div>
+                            <div class="progress-bar-value">
+                                <span>0%</span>
+                                <span>100%</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="today-details-item">
+                        <div class="value-box">
+                            <h3 class="value-box__title">Давление</h3>
+                            <img class="value-box__icon" src="img/icons32/barometr.svg" alt="Давление">
+                            <span class="value-box__value">--</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-range-wrapper">
+                                <input class="progress-bar__range progress-bar__range--pressure" type="range" value="600" min="600" max="800" step="1" disabled>
+                            </div>
+                            <div class="progress-bar-value">
+                                <span>Повышенное</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="today-details-item">
+                        <div class="value-box">
+                            <h3 class="value-box__title">Видимость</h3>
+                            <img class="value-box__icon" src="img/icons32/visibility.svg" alt="Видимость">
+                            <span class="value-box__value">-- км</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-range-wrapper">
+                                <input class="progress-bar__range progress-bar__range--progress" type="range" value="0" min="0" max="100" step="1" disabled>
+                            </div>
+                            <div class="progress-bar-value">
+                                <span>Нормальная</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="today-details-item">
+                        <div class="value-box">
+                            <h3 class="value-box__title">Рассвет</h3>
+                            <img class="value-box__icon" src="img/icons32/sunrise.svg" alt="Рассвет">
+                            <span class="value-box__value"><time datetime="00:00">00:00</time></span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-value">
+                                <span>Прошло: <time datetime="00:00">00:00</time></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="today-details-item">
+                        <div class="value-box">
+                            <h3 class="value-box__title">Закат</h3>
+                            <img class="value-box__icon" src="img/icons32/sunset.svg" alt="Закат">
+                            <span class="value-box__value"><time datetime="16:37">00:00</time></span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-value">
+                                <span>Осталось: <time datetime="00:00">00:00</time></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="today-details-item">
+                        <div class="value-box">
+                            <h3 class="value-box__title">Сила ветра</h3>
+                            <img class="value-box__icon" src="img/icons32/direction/north-west.svg" alt="Сила ветра">
+                            <span class="value-box__value">-- м/с</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-bar-value">
+                                <span>Северо-западный</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="slider">
+                <div class="slider-label">
+                    <h3 class="slider-title">Прогноз:</h3>
+                    <button class="slider__tab" type="button" aria-pressed="true">на 24 часа</button>
+                    <button class="slider__tab" type="button">на 5 дней</button>
+                </div>
+                <div class="slider-box">
+                    <button class="chevron" type="button" disabled>
+                        <img class="chevron__icon--left" src="img/icons24/chevron.svg" alt="Прокрутка влево">
+                    </button>
+                    <button class="chevron" type="button">
+                        <img class="chevron__icon--right" src="img/icons24/chevron.svg" alt="Прокрутка вправо">
+                    </button>
+                    <ul class="slider-list" tabindex="-1">
+                        <li class="slider-list__item">
+                            <div class="day-hour-weather">
+                                <time class="day-hour-weather__time">00:00</time>
+                                <img class="day-hour-weather__icon" src="img/icons100/day/broken-clouds.svg" alt="Облачно">
+                                <span class="day-hour-weather__value">от --° до --°</span>
+                            </div>
+                        </li>
+                        <li class="slider-list__item">
+                            <div class="day-hour-weather">
+                                <time class="day-hour-weather__time">00:00</time>
+                                <img class="day-hour-weather__icon" src="img/icons100/day/broken-clouds.svg" alt="Облачно">
+                                <span class="day-hour-weather__value">от --° до --°</span>
+                            </div>
+                        </li>
+                        <li class="slider-list__item">
+                            <div class="day-hour-weather">
+                                <time class="day-hour-weather__time">00:00</time>
+                                <img class="day-hour-weather__icon" src="img/icons100/day/broken-clouds.svg" alt="Облачно">
+                                <span class="day-hour-weather__value">от --° до --°</span>
+                            </div>
+                        </li>
+                        <li class="slider-list__item">
+                            <div class="day-hour-weather">
+                                <time class="day-hour-weather__time">00:00</time>
+                                <img class="day-hour-weather__icon" src="img/icons100/day/broken-clouds.svg" alt="Облачно">
+                                <span class="day-hour-weather__value">от --° до --°</span>
+                            </div>
+                        </li>
+                        <li class="slider-list__item">
+                            <div class="day-hour-weather">
+                                <time class="day-hour-weather__time">00:00</time>
+                                <img class="day-hour-weather__icon" src="img/icons100/day/broken-clouds.svg" alt="Облачно">
+                                <span class="day-hour-weather__value">от --° до --°</span>
+                            </div>
+                        </li>
+                        <li class="slider-list__item">
+                            <div class="day-hour-weather">
+                                <time class="day-hour-weather__time">00:00</time>
+                                <img class="day-hour-weather__icon" src="img/icons100/day/broken-clouds.svg" alt="Облачно">
+                                <span class="day-hour-weather__value">от --° до --°</span>
+                            </div>
+                        </li>
+                        <li class="slider-list__item">
+                            <div class="day-hour-weather">
+                                <time class="day-hour-weather__time">00:00</time>
+                                <img class="day-hour-weather__icon" src="img/icons100/day/broken-clouds.svg" alt="Облачно">
+                                <span class="day-hour-weather__value">от --° до --°</span>
+                            </div>
+                        </li>
+                        <li class="slider-list__item">
+                            <div class="day-hour-weather">
+                                <time class="day-hour-weather__time">00:00</time>
+                                <img class="day-hour-weather__icon" src="img/icons100/day/broken-clouds.svg" alt="Облачно">
+                                <span class="day-hour-weather__value">от --° до --°</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p class="footer-text">
+                Проект выполнен в рамках стажировки
+                <a class="footer__link" href="https://preax.ru" target="_blank" rel="noopener noreferrer">
+                    PREAX
+                </a>
+            </p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

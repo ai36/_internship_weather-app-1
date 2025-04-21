@@ -1,0 +1,174 @@
+.today-details-item {
+    background-color: #F5F4F466;
+    background-color: var(--color-white-alpha, #F5F4F466);
+    padding: 16px;
+    padding: var(--size-m, 16px);
+    border-radius: 8px;
+    border-radius: var(--size-s, 8px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    gap: var(--size-m, 16px);
+}
+
+@media screen and (width < 768px) {
+    .today-details-item {
+        padding: var(--size-sm);
+        gap: var(--size-sm);
+    }
+}
+
+.value-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    gap: var(--size-m, 16px);
+}
+
+@media screen and (width < 768px) {
+    .value-box {
+        gap: var(--size-sm);
+    }
+}
+
+.value-box__title {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    color: #202020;
+    color: var(--color-black, #202020);
+}
+
+@media screen and (width < 768px) {
+    .value-box__title {
+        font-size: 12px;
+        line-height: 16px;
+    }
+}
+
+.value-box__icon {
+    opacity: 70%;
+}
+
+@media screen and (width < 768px) {
+    .value-box__icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+.value-box__value {
+    font-size: 32px;
+    line-height: 1;
+}
+
+@media screen and (width < 768px) {
+    .value-box__value {
+        font-size: 22px;
+    }
+}
+
+.progress-bar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    gap: var(--size-s, 8px);
+    font-size: 12px;
+    line-height: 16px;
+
+    --size-range: 8px;
+    --thumb-size: var(--size-range);
+    --hole-size: calc(var(--size-range) + 4px);
+}
+
+@media screen and (width < 768px) {
+    .progress-bar {
+        gap: 6px;
+
+        --size-range: 6px;
+        --hole-size: calc(var(--size-range) + 3px);
+    }
+}
+
+.progress-bar-range-wrapper {
+    display: flex;
+    align-items: center;
+    height: var(--size-range);
+    overflow: hidden;
+}
+
+.progress-bar__range {
+    width: 100%;
+    height: var(--size-range);
+    appearance: none;
+    background: transparent;
+
+    position: relative;
+}
+
+.progress-bar__range::-moz-range-track {
+    height: var(--size-range);
+    background-color: #DADADA66;
+    background-color: var(--color-lightgrey-alpha, #DADADA66);
+    border-radius: var(--size-range);
+    mask: radial-gradient(circle at calc(var(--thumb-size) / 2 + (100% - var(--thumb-size)) * var(--x-range) / 100) center, transparent calc(var(--hole-size) / 2), black calc(var(--hole-size) / 2));
+}
+
+.progress-bar__range--pressure::-moz-range-track {
+    background: transparent linear-gradient(to right, #DADADA66, #8A8A8A66, #54545466, #8A8A8A66, #DADADA66);
+}
+
+.progress-bar__range::-moz-range-thumb {
+    width: var(--thumb-size);
+    height: var(--thumb-size);
+    border: none;
+    background: white;
+    border-radius: 50%;
+}
+
+.progress-bar__range::-webkit-slider-runnable-track {
+    height: var(--size-range);
+    background-color: #DADADA66;
+    background-color: var(--color-lightgrey-alpha, #DADADA66);
+    border-radius: var(--size-range);
+    mask: radial-gradient(circle at calc(var(--thumb-size) / 2 + (100% - var(--thumb-size)) * var(--x-range) / 100) center, black calc(var(--size-range) / 2), transparent calc(var(--size-range) / 1.8), transparent calc(var(--hole-size) / 2), black calc(var(--hole-size) / 2));
+}
+
+.progress-bar__range--pressure::-webkit-slider-runnable-track {
+    background: transparent linear-gradient(to right, #DADADA66, #8A8A8A66, #54545466, #8A8A8A66, #DADADA66);
+}
+
+.progress-bar__range::-webkit-slider-thumb {
+    width: var(--size-range);
+    height: var(--size-range);
+    appearance: none;
+    background: radial-gradient(circle at center, #F5F4F4 calc(var(--size-range) / 2), transparent calc(var(--size-range) / 2));
+    border-radius: 50%;
+}
+
+.progress-bar-value {
+    display: block;
+}
+
+@media screen and (width < 768px) {
+    .progress-bar-value {
+        font-size: 10px;
+        line-height: 12px;
+        text-align: center;
+    }
+}
+
+.today-details-item:nth-child(1) .progress-bar-value {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: unset;
+}
+
+.progress-bar-value:has(span + span) span:first-child {
+    flex: 1;
+}
