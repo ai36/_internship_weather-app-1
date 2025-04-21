@@ -1,0 +1,58 @@
+.day-hour-weather {
+    background-color: var(--color-white-alpha);
+    border-radius: var(--size-s);
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: var(--size-m);
+    padding: var(--size-m);
+    color: var(--color-black);
+    font-size: 16px;
+    line-height: 20px;
+}
+
+@media screen and (width < 1280px) {
+    .day-hour-weather {
+        flex-direction: row;
+    }
+}
+
+@media screen and (width < 886px) {
+    .day-hour-weather {
+        gap: var(--size-m);
+        padding: var(--size-m);
+        flex-direction: column;
+    }
+}
+
+@media screen and (width < 768px) {
+    .day-hour-weather {
+        gap: var(--size-sm);
+        padding: var(--size-sm);
+        font-size: 12px;
+        line-height: 16px;
+        flex-direction: row;
+    }
+}
+
+@media screen and (width < 640px) {
+    .day-hour-weather {
+        flex-direction: column;
+    }
+}
+
+.day-hour-weather__time,
+.day-hour-weather__value {
+    white-space: nowrap;
+}
+
+.day-hour-weather__icon {
+    width: 32px;
+    aspect-ratio: 1;
+}
+
+@media screen and (width < 768px) {
+    .day-hour-weather__icon {
+        width: 24px;
+    }
+}
